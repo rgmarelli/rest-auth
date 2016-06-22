@@ -33,7 +33,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.httpBasic();
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/v1/oauth/token").authenticated();
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/v1/thing/search").authenticated();
 		
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);		
